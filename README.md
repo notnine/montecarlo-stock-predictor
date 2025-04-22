@@ -8,7 +8,7 @@ This tool is designed for:
 - **Simulating stock price paths** using probabilistic modeling (GBM)
 - **Running 1,000+ simulations** to estimate future price distributions
 - **Training a Decision Tree model** to analyze and rank variable importance
-- Helping users understand potential stock trajectories and key drivers
+- Comparing predictions to a synthetic “real world” to assess forecasting behavior
 
 ## 🧰 Tech Stack
 
@@ -16,7 +16,7 @@ This tool is designed for:
 - **Core Libraries**:
   - `pandas` – data manipulation
   - `numpy` – numerical operations and random generation
-  - `matplotlib` – data visualization (optional)
+  - `matplotlib` – data visualization
   - `scikit-learn` – Decision Tree Regressor
 
 ## 📁 Project Structure
@@ -32,6 +32,24 @@ montecarlo-stock-predictor/
 └── README.md                      # Project overview
 ```
 
+## 📊 Visuals
+
+### Forecasted Simulations
+A set of 1,000 simulated stock price paths using Geometric Brownian Motion.
+- The **gray lines** represent individual simulation paths.
+- The **blue line** is the mean of all predictions.
+
+### Real World Path
+A single GBM simulation treated as the “actual” future stock price behavior.
+
+### Combined Comparison Visual
+An overlay that compares:
+- All prediction paths
+- The mean predicted path (blue)
+- The real-world path (red)
+
+This allows you to visually assess how realistic the model’s forecasts were under synthetic conditions.
+
 ## 🚀 How to Run
 
 1. Install dependencies:
@@ -44,10 +62,10 @@ montecarlo-stock-predictor/
    python main.py
    ```
 
-3. View simulation results and variable importance rankings.
+3. Observe real-time visualizations of prediction vs. synthetic outcome.
 
-## 📊 Example Use Case
+## 🧪 Example Use Case
 
-- Predict the future price path of AAPL stock
+- Predict the future price path of a stock
 - Understand how volatility, drift, and time steps affect projections
-- Identify which simulation parameters have the strongest influence on outcome ranges
+- Identify key drivers in the forecast and test model accuracy against a known outcome
