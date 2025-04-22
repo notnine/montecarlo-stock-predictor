@@ -19,7 +19,8 @@ def analyze_feature_importance(paths, mu, sigma):
     # Example feature set: [initial price, mu, sigma, random_noise_std]
     mus = np.random.uniform(mu - 0.02, mu + 0.02, size=num_paths)
     sigmas = np.random.uniform(sigma - 0.1, sigma + 0.1, size=num_paths)
-    X = np.column_stack((mus, sigmas))    y = final_prices
+    X = np.column_stack((mus, sigmas))
+    y = final_prices
 
     # Create and train the Decision Tree model
     model = DecisionTreeRegressor(random_state=0)
