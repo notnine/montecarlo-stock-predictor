@@ -17,8 +17,9 @@ def analyze_feature_importance(paths, mu, sigma):
     num_paths = paths.shape[0]
 
     # Example feature set: [initial price, mu, sigma, random_noise_std]
-    X = np.array([[mu, sigma] for _ in range(num_paths)])
-    y = final_prices
+    mus = np.random.uniform(mu - 0.02, mu + 0.02, size=num_paths)
+    sigmas = np.random.uniform(sigma - 0.1, sigma + 0.1, size=num_paths)
+    X = np.column_stack((mus, sigmas))    y = final_prices
 
     # Create and train the Decision Tree model
     model = DecisionTreeRegressor(random_state=0)
@@ -49,5 +50,8 @@ if __name__ == "__main__":
     simulations = 1000
     seed = 42
 
-    paths = geometric_brownian_motion(S0, mu, sigma, T, N, simulations, seed)
+    paths = np.array([
+    geometric_brownian_motion(S0, m, s, T, N, simulations=1)[0]
+    for m, s in zip(mus, sigmas)
+    ])
     analyze_feature_importance(paths, mu, sigma)
