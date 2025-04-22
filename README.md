@@ -18,14 +18,11 @@ This tool is designed for:
   - `numpy` – numerical operations and random generation
   - `matplotlib` – data visualization (optional)
   - `scikit-learn` – Decision Tree Regressor
-  - `yfinance` – (optional) for stock data collection
 
 ## 📁 Project Structure
 
 ```
 montecarlo-stock-predictor/
-├── data/
-│   └── stock_data.csv             # (Optional) Pre-downloaded historical stock data
 ├── src/
 │   ├── gbm_simulator.py           # Simulates price paths using GBM
 │   ├── decision_tree_analysis.py  # Trains DecisionTreeRegressor on simulated data
