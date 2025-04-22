@@ -1,6 +1,6 @@
 
-from utils import geometric_brownian_motion
-from decision_tree_analysis import analyze_feature_importance
+from src.utils import geometric_brownian_motion
+from src.decision_tree_analysis import analyze_feature_importance
 import matplotlib.pyplot as plt
 
 def explain_and_get_input(prompt, explanation, cast_type=float):
