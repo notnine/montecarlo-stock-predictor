@@ -35,12 +35,14 @@ montecarlo-stock-predictor/
 ## 📈 Graphs
 
 ### 📉 Simulated Forecast vs. Real World
+![montecarloexample](https://github.com/user-attachments/assets/c0f69ad1-7ab1-4da3-8b37-c40b616fb3a5)
 This chart overlays:
 - **Gray lines**: Predicted simulations from Monte Carlo
 - **Blue line**: Mean predicted path
 - **Red line**: A synthetic "real world" path to compare against predictions
 
 ### 🌲 Feature Importance from Decision Tree
+![montecarloexample2](https://github.com/user-attachments/assets/88125f37-43b6-43ef-abc1-4f1a6c6b0591)
 This bar chart ranks:
 - How much each input (e.g., drift or volatility) influenced the final simulated stock price
 - Helps explain **which variables matter most** in shaping outcomes
